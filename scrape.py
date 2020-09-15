@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 info={}
 
- def scrape_headline(): 
+def scrape_headline(): 
     news_url = "https://mars.nasa.gov/news/"
 
     response=requests.get(news_url)
@@ -21,7 +21,7 @@ info={}
 
     info.update({"headline":headline_text,"preview":preview})
 
- def scrape_featured_image():   
+def scrape_featured_image():   
     executable_path = {'executable_path': 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=True)
 
