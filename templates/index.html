@@ -15,7 +15,29 @@
             <p><a class="btn btn-primary btn-lg bg-dark" href="/scrape" role="button">Perform Web Scrape</a></p>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center m-4">
+            <div class="col-lg-12 bg-light rounded">
+                <h1>Latest Mars News</h1>
+                <h3>{{mars_info.headline}}</h3>
+                <p>{{mars_info.preview}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 bg-light rounded m-1">
+                <h1>Featured Mars Image</h1>
+                <img class="img-fluid m-2" src="{{mars_info.featured_image}}" alt="Failed to load image">
+            </div>
+            <div class="col-lg-5 bg-light rounded m-1">
+                <h1>Mars Info</h1>
+                {{mars_info.Mars_Info_Table | safe}}
+            </div>
+        </div>
+    </div>
 </html>
     <!-- <img src={{mars_info.images[0].link}}> -->
 </body>
-<!-- {{mars_info}} -->
+{{mars_info}}
+

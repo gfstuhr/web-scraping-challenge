@@ -45,9 +45,9 @@ def scrape_featured_image():
 def scrape_table():
     facts_url="https://space-facts.com/mars/"
     mars_table=pd.read_html(facts_url)[0]
-    mars_table_html=mars_table.to_html()
+    mars_table_html=mars_table.to_html(index=False, header=False, classes=["table", "table-striped"])
 
-    info.update({"Mars Info Table":mars_table_html})
+    info.update({"Mars_Info_Table":mars_table_html})
 
 
 def scrape_images():
@@ -79,7 +79,7 @@ def scrape_images():
 def scrape():
     scrape_headline()
     scrape_featured_image()
-    scrape_table
+    scrape_table()
     scrape_images()
     return info
 
